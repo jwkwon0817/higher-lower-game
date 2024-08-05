@@ -6,19 +6,7 @@ window.onload = async () => {
     const mainScreen = document.querySelector('.main-screen');
     const gameScreen = document.querySelector('.game-screen');
 
-    const startButton = document.querySelector('.start');
-    const blackButton = document.querySelector('.arrow-black');
-    const whiteButton = document.querySelector('.arrow-white');
-
-    startButton.addEventListener('mouseover', () => {
-        blackButton.style.display = 'none';
-        whiteButton.style.display = 'block';
-    })
-
-    startButton.addEventListener('mouseout', () => {
-        blackButton.style.display = 'block';
-        whiteButton.style.display = 'none';
-    })
+    const startButton = document.querySelector('.start');    
 
     const result = await fetch('https://api.sunrin.kr')
         .then((response) => response.json())

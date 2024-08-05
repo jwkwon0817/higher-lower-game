@@ -7,8 +7,10 @@ function end(current) {
     const restartBlackButton = document.querySelector('.restart-black');
     const restartWhiteButton = document.querySelector('.restart-white');
 
-    const endCurrentScore = document.querySelector('.end-current-score > h3');
-    endCurrentScore.innerHTML = `${current}`;
+    const endCurrentScore = document.querySelector('.end-score');
+    endCurrentScore.innerHTML = `
+        ${current}
+    `;
     const endMaxScore = document.querySelector('.end-max-score > h3');
     endMaxScore.innerHTML = localStorage.getItem('maxScore') ? localStorage.getItem('maxScore') : 0;
 
@@ -49,22 +51,22 @@ function end(current) {
 
 
         gameScreen.innerHTML = `
-        <div class="max-score score">
-                <h2>최고 점수</h2>
-                <h3>1</h3>
-            </div> 
-            <div class="current-score score">
-                <h2>현재 점수</h2>
-                <h3>0</h3>
-            </div>
-            <div class="status-container">
-                <div class="status">
-                <div class="status-inner status-front"></div>
-                <div class="status-inner status-back"></div>
+            <div class="max-score score">
+                    <h2>최고 점수</h2>
+                    <h3>1</h3>
+                </div> 
+                <div class="current-score score">
+                    <h2>현재 점수</h2>
+                    <h3>0</h3>
                 </div>
-            </div>
+                <div class="status-container">
+                    <div class="status">
+                    <div class="status-inner status-front"></div>
+                    <div class="status-inner status-back"></div>
+                    </div>
+                </div>
 
-            <div class="game-container">
+                <div class="game-container">
             </div>`
 
         mainScreen.style.display = 'none';

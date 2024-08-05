@@ -188,6 +188,4 @@ function wrong(obj, list, current) {
 
         end(current)
     }, 1000);
-
-    // location.reload();
 }

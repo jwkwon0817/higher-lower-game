@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
 
-    gap: 40px;
+    gap: 108px;
 }
 
 .result {
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
 
-    gap: 30px;
+    gap: 32px;
 }
 
 .end-current-score, .end-max-score {
@@ -29,10 +29,11 @@
 }
 
 .end-current-score {
-    gap: 10px;
+    gap: 32px;
 }
 
 .end-max-score {
+    flex-direction: row;
     gap: 10px;
 }
 
@@ -45,13 +46,25 @@
     line-height: 100%; 
 }
 
-.end-current-score > h3 {
+.end-score {
     color: #000;
-    font-family: "Wanted Sans Variable";
-    font-size: 24px;
+    text-align: center;
+    font-family: "Pretendard Variable";
+    font-size: 80px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 100%;
+    font-weight: 700;
+    line-height: 120%; /* 96px */
+    letter-spacing: 0.8px;
+}
+
+.end-current-score > h3 > span:last-child {
+    color: #000;
+    font-family: "Pretendard Variable";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.48px;
 }
 
 .end-max-score > h2 {
