@@ -46,25 +46,32 @@
     line-height: 100%; 
 }
 
-.end-score {
+.end-current-score > h3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+
     color: #000;
     text-align: center;
-    font-family: "Pretendard Variable";
+    font-family: "Wantend Sans Variable";
     font-size: 80px;
     font-style: normal;
     font-weight: 700;
-    line-height: 120%; /* 96px */
-    letter-spacing: 0.8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.end-current-score > h3 > span:last-child {
+.end-current-score > h3 > span {
     color: #000;
-    font-family: "Pretendard Variable";
+    font-family: "Wanted Sans Variable";
     font-size: 48px;
     font-style: normal;
     font-weight: 700;
-    line-height: 120%;
-    letter-spacing: 0.48px;
+
+
 }
 
 .end-max-score > h2 {

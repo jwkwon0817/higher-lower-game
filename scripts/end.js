@@ -10,6 +10,7 @@ function end(current) {
     const endCurrentScore = document.querySelector('.end-score');
     endCurrentScore.innerHTML = `
         ${current}
+        <span>점</span>
     `;
     const endMaxScore = document.querySelector('.end-max-score > h3');
     endMaxScore.innerHTML = localStorage.getItem('maxScore') ? localStorage.getItem('maxScore') : 0;
