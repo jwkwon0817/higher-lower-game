@@ -197,7 +197,7 @@
     transform: rotateY(180deg);
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 600px) {
     .status-container {
         width: 80px;
         height: 80px;
