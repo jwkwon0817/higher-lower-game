@@ -1,4 +1,8 @@
 window.onload = async () => {
+    if (localStorage.getItem('maxScore') === null) {
+        localStorage.setItem('maxScore', 0);
+    }
+
     const mainScreen = document.querySelector('.main-screen');
     const gameScreen = document.querySelector('.game-screen');
 
