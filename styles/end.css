@@ -1,0 +1,132 @@
+.end-screen {
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.end-current-score, .end-max-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-current-score {
+    gap: 10px;
+}
+
+.end-max-score {
+    gap: 10px;
+}
+
+.end-current-score > h2 {
+    color: #000;
+    font-family: "Wanted Sans Variable";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; 
+}
+
+.end-current-score > h3 {
+    color: #000;
+    font-family: "Wanted Sans Variable";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.end-max-score > h2 {
+    color: #777;
+    font-family: "Wanted Sans Variable";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.end-max-score > h3 {
+    color: #777;
+    font-family: "Wanted Sans Variable";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.end-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.end-button {
+    /* aspect-ratio: 2 / 1; */
+    width: 160px;
+    height: 50px;
+
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+    border: 2px solid #000;
+    backdrop-filter: blur(2.5px);
+
+    color: #000;
+    font-family: "Wanted Sans Variable";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+
+    cursor: pointer;
+
+    gap: 5px;
+
+    transition: transform 0.1s ease-in-out;
+}
+
+.end-button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.end-button:first-child > img {
+    transform: translateY(-2px);
+}
+
+.end-button > img {
+    height: 40%;
+    width: auto;
+}
+
+.end-button:active {
+    transform: scale(0.9);
+}
+
+.main-white, .restart-white {
+    display: none;
+}
