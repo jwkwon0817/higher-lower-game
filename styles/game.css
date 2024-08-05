@@ -169,10 +169,6 @@
     transform-style: preserve-3d;
   }
 
-  .status-container:hover .status {
-    transform: rotateY(180deg);
-  }
-
   .status-inner {
     position: absolute;
     top: 0;
