@@ -80,7 +80,7 @@ function gameStart(list, obj) {
             gameContainer.innerHTML += `
                 <div class="keyword keyword-quiz-black">
                     <h2>${list[current + 1]}</h2>
-                    <h3 class="current">${format(obj[list[current + 1]])}회</h3>
+                    <h3 class="current"></h3>
         
                     <div class="quiz-buttons">
                         <button class="quiz-button quiz-button-white quiz-button-up">
@@ -98,7 +98,7 @@ function gameStart(list, obj) {
             gameContainer.innerHTML += `
                 <div class="keyword keyword-quiz-white">
                     <h2>${list[current + 1]}</h2>
-                    <h3 class="current">${format(obj[list[current + 1]])}회</h3>
+                    <h3 class="current"></h3>
         
                     <div class="quiz-buttons">
                         <button class="quiz-button quiz-button-black quiz-button-up">
