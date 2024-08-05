@@ -4,7 +4,7 @@
     width: 100vw;
     height: 100vh;
 
-    position: relative; /* For positioning child elements */
+    position: relative;
     overflow: hidden;
 }
 
@@ -26,18 +26,14 @@
     color: #aaa;
     font-family: "Wanted Sans Variable";
     font-size: 28px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 100%;
 }
 
 .score > h3 {
     color: #aaa;
     font-family: "Wanted Sans Variable";
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 100%;
 }
 
 .max-score {
@@ -110,9 +106,7 @@
 
     font-family: "Wanted Sans Variable";
     font-size: 18px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 100%;
 
     cursor: pointer;
 
@@ -159,17 +153,17 @@
     perspective: 500px;
     
     z-index: 1;
-  }
+}
 
-  .status {
+.status {
     position: relative;
     width: 100%;
     height: 100%;
     transition: 1s;
     transform-style: preserve-3d;
-  }
+}
 
-  .status-inner {
+.status-inner {
     position: absolute;
     top: 0;
     left: 0;
@@ -180,24 +174,24 @@
     height: 100%;
     border-radius: 0.5em;
     font-size: 1rem;
-  }
+}
 
-  .status-inner.status-front {
+.status-inner.status-front {
     z-index: 1;
     background-image: url('../assets/vs.png');
     background-size: cover;
     background-position: center;
     backface-visibility: hidden;
-  }
+}
 
-  .status-inner.status-back {
+.status-inner.status-back {
     background-image: url('../assets/o.png');
     background-size: cover;
     background-position: center;
     transform: rotateY(180deg);
-  }
+}
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .status-container {
         width: 80px;
         height: 80px;

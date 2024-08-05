@@ -7,49 +7,43 @@ function end(current) {
     const restartBlackButton = document.querySelector('.restart-black');
     const restartWhiteButton = document.querySelector('.restart-white');
 
-    const endCurrentScore = document.querySelector('.end-score');
+    const endCurrentScore = document.querySelector('.end-current-score > h3');
+
     endCurrentScore.innerHTML = `
         ${current}
         <span>점</span>
     `;
+
     const endMaxScore = document.querySelector('.end-max-score > h3');
-    endMaxScore.innerHTML = localStorage.getItem('maxScore') ? localStorage.getItem('maxScore') : 0;
+    endMaxScore.innerHTML = localStorage.getItem('maxScore') || 0;
 
     mainButton.addEventListener('mouseover', () => {
         mainBlackButton.style.display = 'none';
         mainWhiteButton.style.display = 'block';
     })
 
-    mainButton.addEventListener('mouseout', () => {
-        mainBlackButton.style.display = 'block';
-        mainWhiteButton.style.display = 'none';
-    })
+    mainButton.addEventListener('mouseover', () => toggleButtonState(mainBlackButton, mainWhiteButton, 'none', 'block'));
+    mainButton.addEventListener('mouseout', () => toggleButtonState(mainBlackButton, mainWhiteButton, 'block', 'none'));
 
-    restartButton.addEventListener('mouseover', () => {
-        restartBlackButton.style.display = 'none';
-        restartWhiteButton.style.display = 'block';
-    })
+    restartButton.addEventListener('mouseover', () => toggleButtonState(restartBlackButton, restartWhiteButton, 'none', 'block'));
+    restartButton.addEventListener('mouseout', () => toggleButtonState(restartBlackButton, restartWhiteButton, 'block', 'none'));
 
-    restartButton.addEventListener('mouseout', () => {
-        restartBlackButton.style.display = 'block';
-        restartWhiteButton.style.display = 'none';
-    })
+    mainButton.addEventListener('click', () => location.reload());
 
-    mainButton.addEventListener('click', () => {
-        location.reload();
-    });
+    restartButton.addEventListener('click', restartGame);
 
-    restartButton.addEventListener('click', async () => {
+    function toggleButtonState(blackButton, whiteButton, blackDisplay, whiteDisplay) {
+        blackButton.style.display = blackDisplay;
+        whiteButton.style.display = whiteDisplay;
+    }
+
+    async function restartGame() {
         const mainScreen = document.querySelector('.main-screen');
         const gameScreen = document.querySelector('.game-screen');
         const endScreen = document.querySelector('.end-screen');
 
-        const result = await fetch('https://api.sunrin.kr')
-            .then((response) => response.json())
-            .then((data) => data)
-
-        const shuffledKeys = shuffleArray(Object.keys(result))
-
+        const result = await getKeywords();
+        const shuffledKeys = shuffleArray(Object.keys(result));
 
         gameScreen.innerHTML = `
             <div class="max-score score">
@@ -75,5 +69,5 @@ function end(current) {
         gameScreen.style.display = 'block';
 
         gameStart(shuffledKeys, result);
-    });
+    }
 }

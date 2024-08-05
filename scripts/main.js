@@ -8,9 +8,7 @@ window.onload = async () => {
 
     const startButton = document.querySelector('.start');    
 
-    const result = await fetch('https://api.sunrin.kr')
-        .then((response) => response.json())
-        .then((data) => data)
+    const result = await getKeywords();
 
     const shuffledKeys = shuffleArray(Object.keys(result))
 
@@ -20,6 +18,14 @@ window.onload = async () => {
 
         gameStart(shuffledKeys, result);
     })
+}
+
+async function getKeywords() {
+    const result = await fetch('https://api.sunrin.kr')
+        .then((response) => response.json())
+        .then((data) => data)
+
+    return result;
 }
 
 function shuffleArray(array) {

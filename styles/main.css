@@ -24,9 +24,7 @@
     color: #000;
     font-family: "Wanted Sans Variable";
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 100%;
 }
 
 .start {
@@ -61,25 +59,13 @@
     color: #fff;
 }
 
-.arrow-black {
-    height: 60%;
-    width: auto;
-}
-
-.arrow-white {
-    height: 60%;
-    width: auto;
-
-    display: none;
+.start:active {
+    transform: scale(0.9);
 }
 
 .logo {
     width: 20%;
     animation: float 2s infinite;
-}
-
-.start:active {
-    transform: scale(0.9);
 }
 
 @keyframes float {
