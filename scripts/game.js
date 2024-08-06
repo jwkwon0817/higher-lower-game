@@ -12,7 +12,7 @@ function gameStart(list, obj) {
     gameContainer.innerHTML = `
         <div class="keyword keyword-quiz-white">
             <h2>${list[current]}</h2>
-            <h3>${format(obj[list[current]])}회</h3>
+            <h3 class="current">${format(obj[list[current]])}회</h3>
         </div>
         <div class="keyword keyword-quiz-black">
             <h2>${list[current + 1]}</h2>
@@ -39,12 +39,14 @@ function gameStart(list, obj) {
 
         rotateStatus('o');
 
-        const currentCount = document.querySelector('.current');
+        const currentCount = document.querySelectorAll('.current')[1] ;
+        console.log(currentCount);
+        console.log(obj[list[current + 1]]);
         currentCount.innerHTML = `${format(obj[list[current + 1]])}회`;
 
-        let quizButton = document.querySelectorAll('.quiz-button');
+        const quizButton = document.querySelector('.quiz-buttons');
 
-        quizButton.forEach((button) => button.remove());
+        quizButton.remove();
             
 
         current += 1;
@@ -53,15 +55,15 @@ function gameStart(list, obj) {
 
         // generate keyword
         gameContainer.innerHTML += generateKeyword(obj, list, current % 2 == 0 ? 'black' : 'white');
-
-        loadQuizButton();
+ 
         removeQuizButton();
+        loadQuizButton();
     }
 
     function loadQuizButton() {
-        const quizButton = document.querySelectorAll('.quiz-button');
+        const quizButtons = document.querySelectorAll('.quiz-button');
     
-        quizButton.forEach((button) => {
+        quizButtons.forEach((button) => {
             button.addEventListener('click', () => check(button))
         })
     }
@@ -156,7 +158,7 @@ function gameStart(list, obj) {
             button.remove(); 
         });
     
-        const currentCount = document.querySelector('.current');
+        const currentCount = document.querySelectorAll('.current')[1];
         currentCount.innerHTML = `${format(obj[list[current + 1]])}회`;
     
         rotateStatus('x');
